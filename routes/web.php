@@ -35,3 +35,25 @@ Route::prefix('customer')->group(function (){
 
 });
 Route::resource('view','Manager');
+
+Route::get('/tasks','TaskController@index')->name('tasks.index');
+Route::get('/tasks/create','TaskController@create')->name('tasks/create');
+Route::post('/tasks','TaskController@store')->name('tasks.store');
+Route::get('/tasks/{taskId}','TaskController@show')->name('tasks.show');
+Route::get('/tasks/{taskId}/edit','TaskController@edit')->name('tasks.edit');
+Route::match(['put','patch'],'/tasks/{taskId}','TaskController@update')->name('tasks.update');
+Route::delete('/tasks/{photo}','TaskController@destroy')->name('tasks.destroy');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
